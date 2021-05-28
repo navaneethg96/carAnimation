@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    animation: viewShake linear 3s infinite;
+}
+
+.sky {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+}
+
+.trees {
+    height: 90vh;
+    width: 100%;
+    top: -123px;
+    background-image: url(trees.png);
+    position: absolute;
+    background-size: cover;
+    background-repeat: repeat-x;            /*tryout*/
+    animation: treesMotion linear 10s infinite;        /*tryout*/
+}
+
+.track {
+    height: 40vh;
+    width: 400%;
+    top: 70vh;
+    background-image: url(track.png);
+    background-repeat: repeat-x;
+    position: absolute;
+    animation: carMotion linear 4s infinite;
+}
+
+.car {
+    height: 95px;
+    width: 300px;
+    left: 444px;
+    bottom: 170px;
+    background-image: url(car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation: carShake linear 0.8s infinite;
+    animation: routeChange linear 3s infinite;
+}
+
+.wheel-rear img {
+    width: 80px;
+    top: 30px;
+    left: 35px;
+    position: relative;
+    animation: wheelRotation linear 0.2s infinite;
+}
+
+.wheel-front img {
+    width: 80px;
+    top: -50px;
+    left: 200px;
+    position: relative;
+    animation: wheelRotation linear 0.2s infinite;
+}
+
+@keyframes wheelRotation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMotion {
+    100% {
+        transform: translateX(-300vw);
+    }
+}
+
+@keyframes carShake {
+    0% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes routeChange {
+    0% {
+        transform: translateY(75px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(35px);
+    }
+    100% {
+        transform: translateY(75px);
+    }
+}
+
+@keyframes viewShake {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* TreesMotion */
+@keyframes treesMotion {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
